@@ -1,6 +1,7 @@
 # virtual environment + temp files + Movie files
 environment/
 __temp__*
+.DS_Store
 *.MOV
 
 # Byte-compiled / optimized / DLL files
