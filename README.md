@@ -1,4 +1,4 @@
 # cs347_chopchop
-All pip dependencies are located in `requirements.txt` -- you can simply run `pip install -r requirements.txt` to get the right libraries.
+You can run the script by calling `python3 script.py FILENAME` where `FILENAME` is the path to the raw video file you want to generate action clips for (e.g. `python3 script.py raw.MOV`). All action clips will be saved to the `clips` directory.
 
-Current development is happening in `notebook.ipynb`. We should probably work here until we're ready to make a standalone `script.py`
+All pip dependencies are located in `requirements.txt` -- you can simply run `pip install -r requirements.txt` to get the right libraries.
