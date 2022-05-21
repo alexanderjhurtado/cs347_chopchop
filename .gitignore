@@ -3,6 +3,7 @@ environment/
 __temp__*
 .DS_Store
 *.MOV
+*.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
