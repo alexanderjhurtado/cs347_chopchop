@@ -1,8 +1,6 @@
 import os
-import sys
 import numpy as np
 from tqdm import tqdm
-import moviepy.editor as mp
 from moviepy.editor import VideoFileClip
 
 DELTA = 0.01  # length of subclips to sample over (in seconds)
@@ -108,9 +106,6 @@ def save_video_clip(video, save_filename, t_start, t_end):
     Times can be expressed in seconds (15.35), in (min, sec), in (hour, min, sec), or as a string: ‘01:03:05.35’
     """
     clip = video.subclip(t_start, t_end)
-    if clip.rotation == 90:
-        clip = clip.resize(clip.size[::-1])
-        clip.rotation = 0
     clip.write_videofile(save_filename, codec="libx264", audio_codec="aac", logger=None)
 
 
@@ -119,6 +114,9 @@ def generate_action_clips(raw_filepath):
     Identify and save action clips from the video of the given filepath
     """
     with VideoFileClip(raw_filepath) as clip:
+        if clip.rotation == 90:
+            clip = clip.resize(clip.size[::-1])
+            clip.rotation = 0
         print("Identifying action events...")
         volumes = get_volume_array(clip)
         events = get_action_events(volumes)

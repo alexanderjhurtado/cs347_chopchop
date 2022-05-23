@@ -1,5 +1,6 @@
 import sys
 from action_clips import generate_action_clips
+from transition_clips import generate_transition_clips
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -7,3 +8,4 @@ if __name__ == "__main__":
             "Specify the raw video's filename (e.g. `python3 script.py raw_vid.MOV`)"
         )
     generate_action_clips(sys.argv[1])
+    generate_transition_clips(sys.argv[1])
